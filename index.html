@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:wght@400;500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -109,6 +110,7 @@
         background-color: #f8f9fa;
         color: #191c1d;
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
       }
 
       .material-symbols-outlined {
@@ -126,6 +128,28 @@
 
       .hero-mask {
         mask-image: radial-gradient(circle at center, black, transparent 80%);
+      }
+
+      .code-block {
+        background-color: #1a1d21;
+        color: #d1d5db;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f8f9fa;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #c5c6ca;
+        border-radius: 3px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #75777b;
       }
     </style>
   </head>
