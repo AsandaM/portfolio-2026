@@ -47,7 +47,7 @@ const projects = [
 
 <template>
   <main class="min-h-screen">
-    <section class="mx-auto max-w-container-max px-gutter pt-section-gap-sm pb-16">
+    <section v-reveal class="mx-auto max-w-container-max px-gutter pt-section-gap-sm pb-16">
       <div class="max-w-[720px]">
         <h1 class="mb-6 font-display text-5xl leading-tight text-on-surface md:text-6xl">Selected Work</h1>
       </div>
@@ -55,7 +55,7 @@ const projects = [
 
     <section class="mx-auto max-w-container-max px-gutter pb-section-gap-lg">
       <div class="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-        <article v-for="project in projects" :key="project.title" class="project-card group flex flex-col overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest transition-all duration-300 hover:border-primary-container hover:shadow-xl">
+        <article v-for="project in projects" :key="project.title" v-reveal class="project-card group flex flex-col overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest transition-all duration-300 hover:border-primary-container hover:shadow-xl">
           <div class="aspect-video overflow-hidden bg-surface-container">
             <img :alt="project.imageAlt" :src="project.image" class="project-image h-full w-full object-cover transition-transform duration-500">
           </div>
