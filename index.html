@@ -1,12 +1,135 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'on-secondary-fixed-variant': '#735545',
+              'on-surface-variant': '#6c5c54',
+              'surface-dim': '#ecd6cb',
+              'outline-variant': '#c2aea4',
+              'on-secondary-container': '#684b3c',
+              'on-tertiary-container': '#5e4f19',
+              'on-tertiary': '#fff8ed',
+              error: '#a73b21',
+              'on-primary-container': '#5f2f11',
+              'surface-container': '#fdeae1',
+              'surface-container-high': '#f9e4db',
+              tertiary: '#6e5e26',
+              'tertiary-fixed-dim': '#e6d08d',
+              'on-secondary': '#fff7f5',
+              background: '#fff8f6',
+              'surface-container-lowest': '#ffffff',
+              secondary: '#775848',
+              'inverse-surface': '#130d0a',
+              primary: '#895130',
+              'on-surface': '#3d3029',
+              'surface-tint': '#895130',
+              'on-primary': '#fff7f5',
+              'on-background': '#3d3029',
+              'inverse-on-surface': '#a79a95',
+              'error-container': '#fd795a',
+              'on-error': '#fff7f6',
+              'on-tertiary-fixed-variant': '#685922',
+              'secondary-fixed': '#ffdbca',
+              'secondary-fixed-dim': '#f5ccb8',
+              'on-error-container': '#6e1400',
+              'surface-bright': '#fff8f6',
+              'primary-fixed-dim': '#eaa37c',
+              'on-primary-fixed-variant': '#6a3819',
+              'on-secondary-fixed': '#54392b',
+              'tertiary-fixed': '#f4df9a',
+              outline: '#89776e',
+              surface: '#fff8f6',
+              'secondary-container': '#ffdbca',
+              'surface-container-highest': '#f5ded4',
+              'surface-container-low': '#fff1eb',
+              'inverse-primary': '#fab088',
+              'surface-variant': '#f5ded4',
+              'on-tertiary-fixed': '#4a3c06',
+              'tertiary-container': '#f4df9a',
+              'on-primary-fixed': '#451b01',
+              'primary-fixed': '#fab088',
+              'tertiary-dim': '#61521c',
+              'error-dim': '#791903',
+              'primary-dim': '#7b4525',
+              'secondary-dim': '#6a4d3d',
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+            spacing: {
+              gutter: '24px',
+              'section-gap-lg': '120px',
+              'section-gap-sm': '64px',
+              'container-max': '1200px',
+              'margin-mobile': '20px',
+              base: '8px',
+            },
+            fontFamily: {
+              'headline-lg': ['Geist'],
+              'body-md': ['Inter'],
+              caption: ['Inter'],
+              'headline-md': ['Geist'],
+              'body-lg': ['Inter'],
+              'code-label': ['JetBrains Mono'],
+              'display-mobile': ['Geist'],
+              display: ['Eb Garamond'],
+              headline: ['Eb Garamond'],
+              body: ['Manrope'],
+              label: ['Manrope'],
+            },
+            fontSize: {
+              'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em', fontWeight: '600' }],
+              'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+              caption: ['12px', { lineHeight: '16px', letterSpacing: '0.05em', fontWeight: '500' }],
+              'headline-md': ['24px', { lineHeight: '32px', fontWeight: '600' }],
+              'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+              'code-label': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+              'display-mobile': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '700' }],
+              display: ['64px', { lineHeight: '72px', letterSpacing: '-0.04em', fontWeight: '700' }],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f8f9fa;
+        color: #191c1d;
+        overflow-x: hidden;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+      }
+
+      .grid-bg {
+        background-image: linear-gradient(#e9ecef 1px, transparent 1px),
+          linear-gradient(90deg, #e9ecef 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      .hero-mask {
+        mask-image: radial-gradient(circle at center, black, transparent 80%);
+      }
+    </style>
   </head>
-  <body>
+  <body class="font-body-md text-body-md">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
