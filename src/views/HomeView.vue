@@ -1,58 +1,12 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
-
-const heroGlow = ref(null)
-const homePage = ref(null)
-let observer
-
-const moveGlow = (event) => {
-  const x = event.clientX / window.innerWidth
-  const y = event.clientY / window.innerHeight
-
-  if (heroGlow.value) {
-    heroGlow.value.style.transform = `translate(calc(-50% + ${x * 20}px), calc(-50% + ${y * 20}px))`
-  }
-}
-
-onMounted(() => {
-  document.addEventListener('mousemove', moveGlow)
-
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0')
-          entry.target.classList.remove('opacity-0', 'translate-y-10')
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.1 },
-  )
-
-  homePage.value?.querySelectorAll('.group').forEach((item) => {
-    item.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10')
-    observer.observe(item)
-  })
-})
-
-onUnmounted(() => {
-  document.removeEventListener('mousemove', moveGlow)
-  observer?.disconnect()
-})
 </script>
 
 <template>
-  <main ref="homePage" class="pt-16">
+  <main class="pt-16">
     <section
       class="relative mx-auto grid min-h-[921px] max-w-container-max grid-cols-1 items-center gap-12 overflow-hidden px-gutter md:grid-cols-12">
-      <div class="grid-bg absolute inset-0 -z-10 opacity-30"></div>
-      <div ref="heroGlow"
-        class="absolute top-1/2 left-1/2 -z-10 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary-container/20 blur-[120px]">
-      </div>
-
-      <div class="group w-full space-y-8 text-left md:col-span-7">
+      <div v-reveal class="group w-full space-y-8 text-left md:col-span-7">
         <div
           class="inline-flex items-center gap-2 rounded-full border border-outline-variant bg-surface-container px-3 py-1">
           <span class="h-2 w-2 animate-pulse rounded-full bg-primary"></span>
@@ -83,7 +37,7 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <div class="group relative md:col-span-5">
+      <div v-reveal class="group relative md:col-span-5">
         <div class="aspect-[4/5] overflow-hidden rounded-lg border border-outline-variant bg-surface-container-high">
           <img alt="Professional Portrait"
             class="h-full w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
